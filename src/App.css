@@ -1,5 +1,6 @@
 /* Global Styles */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
@@ -66,6 +67,8 @@ body, html {
   transition: all 0.3s ease;
 }
 
+
+
 .hero-content .signup-form button:hover {
   background-color: #f2f2f2;
   transform: translateY(-2px);
@@ -80,7 +83,7 @@ body, html {
   width: 100%;
   max-width: 500px;
   border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Features Section */
@@ -106,7 +109,7 @@ body, html {
 .card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
   max-width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -114,7 +117,7 @@ body, html {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
@@ -226,5 +229,289 @@ footer {
 
   .card {
     max-width: 90%;
+  }
+
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  color: #ff4b2b;
+  text-align: center;
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+/* Price Section */
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.price-section .old-price {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.price-section .new-price {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background: #fff;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.testimonials h2 {
+  color: #222;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px 20px;
+  max-width: 350px;
+  transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.testimonial h4 {
+  color: #ff4b2b;
+  font-weight: 600;
+}
+
+/* Footer / Timer Section */
+.footer {
+  background: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 10%;
+}
+
+.timer span {
+  color: #ff4b2b;
+  font-weight: 700;
+}
+
+.bottom-signup {
+  background-color: #ff4b2b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bottom-signup:hover {
+  background-color: #ff416c;
+  transform: translateY(-2px);
+}
+
+/* Simple Animations */
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease forwards;
+}
+
+.bounce {
+  animation: bounceIn 1.2s ease forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 🔥 Shake animation for "Join Now" button */
+.shake-button {
+  animation: shake 0.8s ease-in-out infinite;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Keyframes for subtle shaking */
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+/* 🔥 Sticky footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Timer text */
+.footer .timer {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Sticky button style */
+.bottom-signup {
+  background: linear-gradient(90deg, #ff6b00, #ff9800);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: shake 0.8s ease-in-out infinite;
+}
+
+/* Hover effect for button */
+.bottom-signup:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+}
+
+/* Prevent content from hiding behind footer */
+.landing-page {
+  padding-bottom: 80px;
+  /* equal to footer height */
+}
+
+/* 🔥 Shake animation (reuse for both buttons) */
+.shake-button,
+.bottom-signup {
+  animation: shake 0.8s ease-in-out infinite;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(4px);
   }
 }
