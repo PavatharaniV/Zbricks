@@ -14,175 +14,412 @@ html {
   overflow-x: hidden;
 }
 
-/* Hero Section */
+/* HERO SECTION - Enhanced */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 60px 10%;
+  padding: 70px 10%;
+  gap: 40px;
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
+  color: #fff;
+  flex-wrap: wrap;
 }
 
-.hero-content {
-  flex: 1 1 400px;
-  max-width: 600px;
-}
-
-.hero-content h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
+/* Title */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 1px;
   margin-bottom: 15px;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  margin-bottom: 30px;
+}
+
+/* Price Section */
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 25px;
-  line-height: 1.6;
 }
 
-.hero-content .signup-form {
+.old-price {
+  text-decoration: line-through;
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+.new-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.highlight-price {
+  background: #fff;
+  color: #ff4b2b;
+  padding: 4px 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.3);
+}
+
+/* Form */
+.hero-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 10px;
 }
 
-.hero-content .signup-form input {
-  flex: 1 1 200px;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 6px;
+.hero-form input {
+  padding: 14px 18px;
+  border-radius: 8px;
   outline: none;
-}
-
-.hero-content .signup-form button {
-  background-color: #fff;
-  color: #ff4b2b;
-  font-weight: 600;
   border: none;
-  border-radius: 6px;
-  padding: 12px 20px;
+  width: 260px;
+  max-width: 100%;
+  font-size: 1rem;
+}
+
+/* Button with glow effect */
+.glow-btn {
+  padding: 14px 25px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  color: #ff4b2b;
+  background: #fff;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
 }
 
-
-
-.hero-content .signup-form button:hover {
-  background-color: #f2f2f2;
-  transform: translateY(-2px);
+.glow-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255,255,255,0.7);
 }
 
-.hero-image {
-  flex: 1 1 400px;
-  text-align: center;
-}
-
+/* Hero image */
 .hero-image img {
   width: 100%;
-  max-width: 500px;
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 520px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
 }
 
-/* Features Section */
+.hero-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .features {
+  padding: 60px 20px;
   text-align: center;
-  padding: 80px 10%;
-  background: #f8f9fa;
 }
 
 .features h2 {
   font-size: 2rem;
-  margin-bottom: 40px;
-  color: #222;
+  margin-bottom: 30px;
+  font-weight: 700;
+  animation: fadeIn 1s ease-out forwards;
 }
 
+/* Card container */
 .feature-cards {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
+/* Cards */
 .card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px 20px;
-  max-width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  width: 300px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transform: translateY(40px);
+  opacity: 0;
 }
 
+/* Slide-up animation */
+.card-animate {
+  animation: slideUp 0.9s ease forwards;
+}
+
+.card-animate:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.card-animate:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Shimmer effect */
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.4) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: shimmerMove 2s infinite;
+}
+
+/* Hover glow */
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(188, 20, 33, 0.25);
+  transition: 0.3s ease;
 }
 
-.card h3 {
-  color: #ff4b2b;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+/* Keyframes */
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
+@keyframes shimmerMove {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 /* CTA Section */
 .cta {
   text-align: center;
-  padding: 70px 10%;
-  background: linear-gradient(135deg, #ff4b2b, #ff416c);
-  color: white;
+  padding: 60px 20px;
+  background: #fff4f4;
+  border-radius: 20px;
+  margin: 50px auto;
+  max-width: 650px;
+  box-shadow: 0 6px 40px rgba(188, 20, 33, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bounce In */
+.cta-animate {
+  animation: ctaBounce 1s ease forwards;
+}
+
+@keyframes ctaBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-5px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
 }
 
 .cta h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #bc1421;
+  font-weight: 700;
 }
 
 .cta p {
   font-size: 1.1rem;
   margin-bottom: 25px;
+  color: #444;
 }
 
-.cta .signup-form {
+/* Form Inputs */
+.signup-form {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.cta .signup-form input {
+.signup-form input {
   padding: 12px 15px;
-  border: none;
-  border-radius: 6px;
+  border-radius: 10px;
+  border: 2px solid #ffd1d1;
   outline: none;
-  width: 250px;
-  max-width: 100%;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 
-.cta .signup-form button {
-  background-color: #fff;
-  color: #ff4b2b;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  padding: 12px 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.signup-form input:focus {
+  border-color: #bc1421;
+  box-shadow: 0 0 10px rgba(188, 20, 33, 0.3);
 }
 
-.cta .signup-form button:hover {
-  background-color: #f2f2f2;
-  transform: translateY(-2px);
-}
-
-/* Footer */
-footer {
-  background: #222;
+/* CTA Button */
+.cta-btn {
+  position: relative;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #bc1421, #f17373);
   color: white;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(188, 20, 33, 0.3);
+}
+
+/* Shimmer Effect */
+.btn-shimmer {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: shimmerBtn 2s infinite;
+}
+
+@keyframes shimmerBtn {
+  0% { left: -100%; }
+  100% { left: 120%; }
+}
+/* Sticky Footer */
+.footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid rgba(188, 20, 33, 0.15);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  z-index: 999;
+  animation: slideUp 0.6s ease forwards;
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.timer {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #bc1421;
+}
+
+.time-badge {
+  background: #ffe5e5;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: #bc1421;
+  box-shadow: inset 0 0 8px rgba(188, 20, 33, 0.2);
+}
+
+/* Bottom Signup Button */
+.bottom-signup {
+  position: relative;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #bc1421, #f17373);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 6px 25px rgba(188, 20, 33, 0.3);
+}
+
+.bottom-signup:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(188, 20, 33, 0.4);
+}
+
+/* Shimmer on Button */
+.btn-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.55) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: shimmerMove 2s infinite;
+}
+
+@keyframes shimmerMove {
+  0% { left: -100%; }
+  100% { left: 120%; }
 }
 
 /* RESPONSIVE DESIGN */
@@ -232,19 +469,71 @@ footer {
   }
 
 }
-
 /* Header */
 .header {
   position: sticky;
   top: 0;
-  background: white;
-  color: #ff4b2b;
-  text-align: center;
-  padding: 20px 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 12px 8%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Add slight shrink effect when scrolling */
+.header.scrolled {
+  padding: 8px 8%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Content wrapper */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Logo */
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0px 4px 12px rgba(255, 75, 43, 0.3);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+/* Logo hover animation */
+.logo:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Title Style */
+.header-content h2 {
+  font-size: 1.7rem;
+  background: linear-gradient(120deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 700;
-  font-size: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  z-index: 1000;
+  letter-spacing: 1px;
+  margin: 0;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Price Section */
@@ -415,14 +704,12 @@ footer {
   }
 }
 
-/* 🔥 Shake animation for "Join Now" button */
 .shake-button {
   animation: shake 0.8s ease-in-out infinite;
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-/* Keyframes for subtle shaking */
 @keyframes shake {
 
   0%,
@@ -441,7 +728,6 @@ footer {
   }
 }
 
-/* 🔥 Sticky footer */
 .footer {
   position: fixed;
   bottom: 0;
@@ -457,14 +743,12 @@ footer {
   z-index: 1000;
 }
 
-/* Timer text */
 .footer .timer {
   font-size: 1rem;
   font-weight: 600;
   color: #000;
 }
 
-/* Sticky button style */
 .bottom-signup {
   background: linear-gradient(90deg, #ff6b00, #ff9800);
   color: #fff;
@@ -514,4 +798,106 @@ footer {
   80% {
     transform: translateX(4px);
   }
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.popup-box {
+  background: #ffffff;
+  padding: 32px;
+  width: 90%;
+  max-width: 360px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadePop 0.25s ease-out;
+}
+
+@keyframes fadePop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.popup-box h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #333;
+  text-align: center;
+}
+
+.popup-form input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.popup-form input:focus {
+  border-color: #bc1421;
+}
+
+.popup-submit {
+  width: 100%;
+  padding: 14px;
+  background: #bc1421;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.popup-submit:hover {
+  background: #a1121c;
+}
+
+.popup-submit {
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 150%; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
 }
